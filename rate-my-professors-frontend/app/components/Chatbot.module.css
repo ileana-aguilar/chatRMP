@@ -1,0 +1,236 @@
+.chatContainer {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  position: relative;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4rem;
+  margin-top: 3rem;
+  height: 75vh;
+}
+
+.centeredContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 78vh;
+  width: 100%;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  height: 200px; 
+  margin-bottom: 10px;
+}
+
+
+.itemsEnd{
+  justify-content: end;;
+}
+.justifyCenter {
+  
+  justify-content: center;
+}
+
+.promptButtons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.promptButtons button {
+  background-color: #f4f4f4;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.promptButtons button:hover {
+  background-color: #e0e0e0;
+}
+
+
+
+.chatMessages {
+  height: 400px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  scroll-behavior: smooth;
+}
+
+.messageWrapper {
+  display: flex;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.alignRight {
+  justify-content: flex-end;
+}
+
+.alignLeft {
+  justify-content: flex-start;
+}
+
+.message {
+  padding: 12px 16px;
+  border-radius: 15px;
+  line-height: 1.4;
+  overflow-y: auto;
+  word-break: break-word;
+}
+
+
+.userMessage {
+  background: #f1f1f1;
+  color: black;
+  border-bottom-right-radius: 0;
+  max-width: 70%;
+
+  
+}
+
+.botMessage {
+  color: black;
+  align-self: flex-start;
+  border-bottom-left-radius: 0;
+}
+
+.chatInputContainer {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  border-radius: 26px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: white;
+  padding: 15px;
+}
+
+.chatInput {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none; 
+  background-color: transparent; 
+  box-shadow: none; 
+}
+
+.chatInput:focus {
+  border: none;
+  outline: none;
+}
+
+
+.sendButton {
+  background: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 26px;
+  cursor: pointer;
+}
+
+.chatInputFixed {
+  position: fixed;
+  bottom: 0;
+
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  padding: 15px;
+  background-color: white;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+  z-index: 10;
+}
+
+
+.typingIndicator {
+  font-size: 14px;
+  font-style: italic;
+  color: #666;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+
+.typingIndicator::after {
+  content: "...";
+  display: inline-block;
+  animation: dots-animation 1.5s infinite;
+}
+
+@keyframes dots-animation {
+  0% { content: ""; }
+  33% { content: "."; }
+  66% { content: ".."; }
+  100% { content: "..."; }
+}
+
+.suggestionBox {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background: #fafafa;
+  border-top: 1px solid #e0e0e0;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  gap: 6px;
+}
+
+.suggestionItem {
+  padding: 8px 12px;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.suggestionItem:hover {
+  background-color: #f2f2f2;
+}
+
+.scrollToBottomButton {
+  position: fixed;
+  bottom: 90px; 
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  font-size: 20px;
+  padding: 10px 14px;
+  cursor: pointer;
+  z-index: 20; 
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease;
+}
+
+
+.scrollToBottomButton:hover {
+  background-color: #f0f0f0;
+}

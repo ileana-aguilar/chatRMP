@@ -1,6 +1,6 @@
 # 🧠 Chat RMP - Rate My Professor Chatbot
 
-Chat RMP is an AI-powered chatbot that helps students discover the best (or worst!) professors in different departments at their college. Built with **FastAPI**, **OpenAI**, **Pinecone**, and a modern **Next.js frontend**, it lets users ask natural language questions like:
+Chat RMP is an AI-powered chatbot that helps students discover the best (or worst!) professors in different departments at Queens college. Built with **FastAPI**, **OpenAI**, **Pinecone**, and a **Next.js frontend**, it lets users ask natural language questions like:
 
 - "Who is the best math professor?"
 - "List professors in the Computer Science department"

@@ -19,8 +19,11 @@ Chat RMP is an AI-powered chatbot that helps students discover the best (or wors
 - ⚡ Powered by FastAPI for a clean, modular API backend.
 
 ---
-## Demo
+## A Quick Look of ChatRMP
 ![Chat RMP Preview](chatRMP.png)
+
+## 🎥 Video Demo
+[![Watch the video](https://img.youtube.com/vi/JvKnj-IJ5Go/0.jpg)](https://youtu.be/JvKnj-IJ5Go)
 
 ## 🛠️ Tech Stack
 

@@ -133,8 +133,8 @@ const Chatbot = () => {
 
   const getMatchingSuggestions = () => {
     const baseSuggestions = [
-      "Who is the best professor in",
-      "Who is the worst professor in",
+      "Who is the best professor in the",
+      "Who is the worst professor in the",
       "List professors in the",
       "Tell me about Professor"
     ];

@@ -38,7 +38,6 @@ max_no_data_retries = 5
 
 try:
     while click_count < MAX_CLICKS:
-        # Wait for cards to appear
         try:
             wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, "TeacherCard__StyledTeacherCard-syjs0d-0")))
         except TimeoutException:
@@ -71,12 +70,11 @@ try:
             except Exception as e:
                 continue
 
-       
         if len(seen_professor_ids) == current_total:
             no_new_data_count += 1
             print("⚠️ No new data this round.")
         else:
-            no_new_data_count = 0  
+            no_new_data_count = 0
 
         print(f"📊 Total unique professors: {len(seen_professor_ids)}")
 
@@ -84,16 +82,27 @@ try:
             print("🛑 Stopped due to no new data after multiple tries.")
             break
 
-        
         try:
+            driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+            time.sleep(random.uniform(1.5, 3.0))
+
             show_more = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "PaginationButton__StyledPaginationButton-txi1dr-1")))
             driver.execute_script("arguments[0].click();", show_more)
-            time.sleep(random.uniform(6.0, 9.0))
             click_count += 1
             print(f"🔄 Clicked Show More ({click_count}/{MAX_CLICKS})")
+
+            # Variable sleep
+            time.sleep(random.uniform(4.0, 8.5))
+
+            # Occasional long sleep
+            if click_count % random.randint(7, 12) == 0:
+                print("😴 Taking a longer break to avoid detection...")
+                time.sleep(random.uniform(20, 30))
+
         except (TimeoutException, NoSuchElementException):
             print("✅ No more pages or 'Show More' button.")
             break
+
 
 except KeyboardInterrupt:
     print("🛑 Interrupted manually.")

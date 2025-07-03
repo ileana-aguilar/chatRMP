@@ -5,9 +5,12 @@ import pandas as pd
 from pinecone import Pinecone
 from openai import OpenAI
 from dotenv import load_dotenv
+from pinecone import ServerlessSpec
 
-
+os.environ.pop("PINECONE_API_KEY", None)
 load_dotenv()
+
+
 PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
@@ -21,7 +24,11 @@ if INDEX_NAME not in pc.list_indexes().names():
     pc.create_index(
         name=INDEX_NAME,
         dimension=1536,  
-        metric="cosine"
+        metric="cosine",
+        spec=ServerlessSpec(
+            cloud="aws",  
+            region="us-east-1" 
+        )
     )
 
 

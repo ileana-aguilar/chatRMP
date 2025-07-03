@@ -8,7 +8,7 @@ import re
 from dotenv import load_dotenv
 import spacy
 
-
+os.environ.pop("PINECONE_API_KEY", None)
 nlp = spacy.load("en_core_web_sm")
 
 
